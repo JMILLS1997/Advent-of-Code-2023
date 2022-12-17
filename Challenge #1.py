@@ -6,7 +6,7 @@ OpenFile = open(FilePath,"r")
 data = OpenFile.read() ##access data
 stringlist = data.split("\n") ##splits each line into list instances
 
-V = 0
+IndvKcal = 0
 newInt = []
 intList = []
 totalKcals = []
@@ -14,12 +14,19 @@ totalKcals = []
 for string in stringlist:               #for any indexed item in the list of strings "stringlist"
     is_int = string.isdigit()           #is_int produces a boolean value depending on data input
     if string == '':                    #if string is a blank space, this is appended to the new list "intList"
-        intList.append(string)          
+        intList.append(0)          
     if is_int == True:                  #if is_int is true, convert the info held in the variable "string" into an interger
         newInt = int(string)            
         intList.append(newInt)          #append new data type into the list "intList"
 
-print(intList)                          #sanity check
+for num in intList:                     #for any indexed item in list of integers "intList"
+    if num != 0:                        #if the indexed value in "intList" does NOT equal 0
+        IndvKcal = IndvKcal + num       #add the value to variable "IndvKcal", which has an initial value of 0
+    if num == 0:                        #if indexed value is equal to 0
+        totalKcals.append(IndvKcal)     #append the value of the "IndvKcal" which signifies the total kcals for an individual elf
+        IndvKcal = 0                    #reset IndvKcal to 0 
+
+print(totalKcals)                       #sanity check
 
 
 
