@@ -3,8 +3,8 @@
 FilePath = "D:\Python\Advent of Code 2022\Challenge 1\Caloric Content List.txt"
 
 OpenFile = open(FilePath,"r")
-data = OpenFile.read() ##access data
-stringlist = data.split("\n") ##splits each line into list instances
+data = OpenFile.read()                  #access data
+stringlist = data.split("\n")           #splits each line into list instances
 
 IndvKcal = 0
 newInt = []
