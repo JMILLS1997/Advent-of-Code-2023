@@ -15,8 +15,8 @@ for string in stringlist:               #for any indexed item in the list of str
     is_int = string.isdigit()           #is_int produces a boolean value depending on data input
     if string == '':                    #if string is a blank space, this is appended to the new list "intList"
         intList.append(0)          
-    if is_int == True:                  #if is_int is true, convert the info held in the variable "string" into an interger
-        newInt = int(string)            
+    if is_int == True:                  #if is_int is true...
+        newInt = int(string)            #convert the info held in the variable "string" into an interger
         intList.append(newInt)          #append new data type into the list "intList"
 
 for num in intList:                     #for any indexed item in list of integers "intList"
@@ -25,6 +25,10 @@ for num in intList:                     #for any indexed item in list of integer
     if num == 0:                        #if indexed value is equal to 0
         totalKcals.append(IndvKcal)     #append the value of the "IndvKcal" which signifies the total kcals for an individual elf
         IndvKcal = 0                    #reset IndvKcal to 0 
+
+for val in totalKcals:
+    
+
 
 print(totalKcals)                       #sanity check
 
