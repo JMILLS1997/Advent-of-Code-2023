@@ -26,11 +26,9 @@ for num in intList:                     #for any indexed item in list of integer
         totalKcals.append(IndvKcal)     #append the value of the "IndvKcal" which signifies the total kcals for an individual elf
         IndvKcal = 0                    #reset IndvKcal to 0 
 
-for val in totalKcals:
-    
+totalKcals.sort()                       #sorts list of total kcals per elf into ascending order
 
-
-print(totalKcals)                       #sanity check
+print(totalKcals[-1])                   #prints last most value, which is largest due to previous sort function being applied to list "totalKcals"
 
 
 
