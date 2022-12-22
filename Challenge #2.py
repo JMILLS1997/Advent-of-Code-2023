@@ -26,16 +26,15 @@ playerscr = []
 for str in adjData:
     for key1, value1 in DictOC.items():
         if key1 == str:
-            print(key1)
+            playerscr.append(value1)
             for key2, value2 in DictPlrHnd.items():
                 if key1[2] == key2:
-                    print(key2)
+                    playerscr.append(value2)
             else:
                 pass
             pass
         else:
             pass
 
-#ADD values to list, do same thing for the DictPlr dict and add those values to a list.
-#Will need to compare hand type to game outcome to determin which hand type occurs in the game outcome ('Y' found in 'A Y')
-#simple character comparason for the two strings, one at str[0] and the other at str[2]
+print(sum(playerscr))
+
