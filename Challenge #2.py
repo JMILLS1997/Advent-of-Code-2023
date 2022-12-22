@@ -5,8 +5,8 @@
 FilePath = "C:\\Users\\James Mills\\Documents\\GitHub\\Advent-of-Code-2022\\inputs\\input 2.txt"
 
 OpenFile = open(FilePath,"r")
-data = OpenFile.readlines()                 #access data
-adjData = [x[:-1] for x in data]            #removes rightmost character from list data for every instance in "data" list
+data = OpenFile.readlines()                 # access data, reads all lines in file
+adjData = [x[:-1] for x in data]            # removes rightmost character from list data for every instance in "data" list
 
 #score dictionary
 #A = X = 1               #Rock
@@ -23,18 +23,18 @@ DictOC = {'A Z': 0, 'B X': 0, 'C Y': 0, 'A X': 3, 'B Y': 3, 'C Z': 3, 'A Y': 6, 
 #player scores var
 playerscr = []
 
-for str in adjData:
-    for key1, value1 in DictOC.items():
-        if key1 == str:
-            playerscr.append(value1)
-            for key2, value2 in DictPlrHnd.items():
-                if key1[2] == key2:
-                    playerscr.append(value2)
-            else:
+for str in adjData:                                             # for all instances(1) in list "adjData"...
+    for key1, value1 in DictOC.items():                         # for all instances(2) in dict. "DictOC"...
+        if key1 == str:                                         # if both instances listed above (1) and (2) match...
+            playerscr.append(value1)                            # append the list "playerscr" with the dict. value from "DictOC"
+            for key2, value2 in DictPlrHnd.items():             # for all instances(3) in dict. "DictPlrHnd"...
+                if key1[2] == key2:                             # if both instances (2) and (3) match...
+                    playerscr.append(value2)                    # append the list "playerscr" with dict. value from "DictPlrHnd"
+            else:                                               # Pass if data does not match instance (2).
                 pass
             pass
         else:
             pass
 
-print(sum(playerscr))
+print(sum(playerscr))                                           # sum of all items in list, print.
 
